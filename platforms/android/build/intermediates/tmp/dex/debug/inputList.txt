@@ -1,0 +1,2 @@
+/home/naimor/dev/apps/Simple Projects/platforms/android/build/intermediates/classes/debug
+/home/naimor/dev/apps/Simple Projects/platforms/android/build/intermediates/pre-dexed/debug/classes-48c996809e5e97db641c6b9cea2f5b326b6d06f2.jar
