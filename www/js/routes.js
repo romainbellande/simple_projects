@@ -22,6 +22,14 @@ var routes = function($stateProvider,$urlRouterProvider){
   .state('create-project',{
     url: '/create-project',
     templateUrl: 'templates/create-project.html'
+  })
+  .state('single-project',{
+    url: '/single-project',
+    templateUrl: 'templates/single-project.html'
+  })
+  .state('tasks',{
+    url: '/tasks',
+    templateUrl: 'templates/tasks.html'
   });
 }
 

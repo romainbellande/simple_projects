@@ -13,8 +13,12 @@
 				<input type="password" ng-model="user.password">
 			</label>
 			<label class="item">
-				<button class="button button-block button-positive icon-right ion-log-in" ng-click="authLogIn(user)">Submit</button>
+				<button class="button button-block button-positive icon-right ion-log-in" ng-click="connectUser(user)">Submit</button>
 			</label>
+			<label class="item">
+				{{login_info}}
+			</label>
+
 		</div>
 	</ion-content>
 	<ion-footer-bar align-title="left" class="bar-positive">

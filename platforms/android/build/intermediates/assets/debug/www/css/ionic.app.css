@@ -7702,10 +7702,18 @@ a.button {
 
 /* ------ TEMPLATES ------- */
 /* ------ INIT ------ */
-#init-content {
+#init-content #init-buttons {
+  margin-top: 60%;
+  width: 100%; }
+
+.pane {
   background-image: url("../img/bg-init.jpg");
   background-size: cover;
   background-position: center center; }
-  #init-content #init-buttons {
-    margin-top: 60%;
-    width: 100%; }
+
+.button-center {
+  margin: 0 auto; }
+
+/* ------ SINGLE-PROJECT ------ */
+#single-project-content textarea {
+  resize: none; }

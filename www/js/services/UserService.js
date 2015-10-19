@@ -37,14 +37,11 @@ function($q,$http){
     connectUser : function(user){
       var q = $q.defer();
       $http({
-        method: 'POST',
-        url: 'http://localhost:3000/users/connectuser',
-        params: {
-          username: user.name,
-          userpassword: user.password
-        }
+        method: 'GET',
+        url: 'http://localhost:3000/user/'+user.name+'/'+user.password
       }).then(function successCallback(response){
-        q.resolve(response);
+        q.resolve(response.data);
+        console.log(response);
       },function errorCallback(response){
         q.reject(response);
       });

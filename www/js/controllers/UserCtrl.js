@@ -1,8 +1,12 @@
-angular.module('app.controllers').controller('UserCtrl', [ '$rootScope', '$scope', 'UserService',
-function($rootScope, $scope, UserService) {
+angular.module('app.controllers').controller('UserCtrl', [ '$rootScope', '$scope', '$location', 'UserService',
+function($rootScope, $scope, $location, UserService) {
   // Get a reference to the Firebase
   // TODO: Replace "ionic-demo" below with the name of your own Firebase
 /* ------ CREATE USER ------ */
+$scope.connectedUser = {
+  id : null
+};
+
   $scope.createUser = function(user){
     console.log(user);
 
@@ -21,6 +25,17 @@ function($rootScope, $scope, UserService) {
 
     },function(error){
       console.log(error);
+    });
+  };
+
+  $scope.connectUser = function(user){
+    UserService.connectUser(user).then(function(success){
+      $scope.connectedUser.id = success._id;
+      console.log("userid: "+success._id);
+      $scope.login_info = "Authentication successfull !";
+      $location.path('/home');
+    },function(error){
+      $scope.login_info = "Authentication failed !";
     });
   };
 

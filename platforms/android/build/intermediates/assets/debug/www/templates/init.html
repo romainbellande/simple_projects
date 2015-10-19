@@ -1,8 +1,12 @@
 <ion-view title="init" class="main-view">
+	<ion-header-bar class="bar bar-header bar-positive" align-title="center">
+                <h1 class="title">Simple Projects</h1>
+        </ion-header-bar>
 	<ion-content id="init-content" class="padding-horizontal">
+
 		<div id="init-buttons">
-			<a href="#/login" id="init-button-login" class="button button-outline button-block button-positive">Log-in</a>
-			<a href="#/create-account" id="init-button-create-account" class="button button-block button-outline button-positive">Create an account</a>
+			<a ui-sref="login" id="init-button-login" class="button button-outline button-block button-positive">Log-in</a>
+			<a ui-sref="create-account" id="init-button-create-account" class="button button-block button-outline button-positive">Create an account</a>
 		</div>
 	</ion-content>
 </ion-view>
