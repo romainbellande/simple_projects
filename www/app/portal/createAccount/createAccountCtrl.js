@@ -1,5 +1,6 @@
-angular.module('app.controllers').controller('CreateAccountCtrl', [ '$rootScope', '$scope', '$location', 'UserService',
-function($rootScope, $scope, $location, UserService) {
+angular.module('app.controllers').controller('CreateAccountCtrl', [
+  '$rootScope', '$scope', '$location', 'CreateAccountService',
+function($rootScope, $scope, $location, CreateAccountService) {
   // Get a reference to the Firebase
   // TODO: Replace "ionic-demo" below with the name of your own Firebase
 /* ------ CREATE USER ------ */

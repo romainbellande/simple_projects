@@ -1,5 +1,5 @@
 'use strict';
-angular.module('app.services').service('UserService',[ '$q', '$http',
+angular.module('app.services').service('CreateAccountService',[ '$q', '$http',
 function($q,$http){
   var baseUrl = "http://localhost:3000";
   //var baseUrl = "http://ec2-52-30-32-89.eu-west-1.compute.amazonaws.com:3000";

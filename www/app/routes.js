@@ -3,7 +3,7 @@
 var routes = function($stateProvider,$urlRouterProvider){
   $urlRouterProvider.otherwise('/');
   $stateProvider
-  .state('portal/main', {
+  .state('portal', {
     url: '/',
     templateUrl: 'app/portal/main/portalTpl.html'
   })
