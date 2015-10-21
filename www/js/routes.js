@@ -3,33 +3,41 @@
 var routes = function($stateProvider,$urlRouterProvider){
   $urlRouterProvider.otherwise('/');
   $stateProvider
-  .state('init', {
+  .state('portal/main', {
     url: '/',
-    templateUrl: 'templates/init.html'
+    templateUrl: 'portal/main/portalTpl.html'
   })
-  .state('login',{
-    url: '/login',
-    templateUrl: 'templates/login.html'
+  .state('portal/login',{
+    url: '/portal/login',
+    templateUrl: 'portal/login/loginTpl.html'
   })
-  .state('create-account',{
-    url: '/create-account',
-    templateUrl: 'templates/create-account.html'
+  .state('portal/create-account',{
+    url: '/portal/create-account',
+    templateUrl: 'portal/createAccount/createAccountTpl.html'
   })
-  .state('home',{
-    url: '/home',
-    templateUrl: 'templates/home.html'
+  .state('projects',{
+    url: '/projects',
+    templateUrl: 'projects/main/projectsTpl.html'
   })
-  .state('create-project',{
-    url: '/create-project',
-    templateUrl: 'templates/create-project.html'
+  .state('/projects/create-project',{
+    url: '/projects/create-project',
+    templateUrl: 'projects/createProject/createProjectTpl.html'
   })
-  .state('single-project',{
-    url: '/single-project',
-    templateUrl: 'templates/single-project.html'
+  .state('/projects/single-project',{
+    url: '/projects/single-project',
+    templateUrl: 'projects/singleProject/singleProjectTpl.html'
   })
   .state('tasks',{
     url: '/tasks',
-    templateUrl: 'templates/tasks.html'
+    templateUrl: 'tasks/main/tasksTpl.html'
+  })
+  .state('tasks/create-task',{
+    url: '/tasks/create-task',
+    templateUrl: 'tasks/createTask/createTaskTpl.html'
+  })
+  .state('tasks/single-task',{
+    url: '/tasks/single-task',
+    templateUrl: 'tasks/singleTask/singleTaskTpl.html'
   });
 }
 
