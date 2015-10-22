@@ -1,15 +1,25 @@
-<ion-view title="login" class="padding" >
+<ion-view title="login" class="padding" ng-controller="ProjectsCtrl">
 	<ion-header-bar class="bar bar-header bar-positive" align-title="center">
-		<h1 class="title">Projects</h1>
+		<i class="button button-icon ion-minus-circled" ng-click="shouldShowDelete = !shouldShowDelete"></i>
+  	<h1 class="title">Projects</h1>
+		<i class="button" ng-click="shouldShowReorder = !shouldShowReorder">Reorder</i>
 	</ion-header-bar>
 	<ion-content>
-		<ul class="list">
-			<li class="item">
-				<button ui-sref="projects/single-project" class="button bar icon-right ion-chevron-right">Projet EGIIS</button>
-			</li>
-			<li class="item" ng-repeat="project in projects">
-			</li>
-		</ul>
+		<ion-list
+    show-delete="shouldShowDelete"
+    show-reorder="shouldShowReorder">
+			<ion-item ui-sref="projects/single-project({projectId: project._id})" ng-repeat="project in projects track by $index" class="item item-icon-right ">
+				{{project.name}}
+				<i class="icon ion-chevron-right"></i>
+				      <ion-delete-button class="ion-minus-circled"
+				      ng-click="deleteProject(project._id,$index)">
+				    </ion-delete-button>
+
+				    <ion-reorder-button class="ion-navicon"
+				    on-reorder="moveItem(project, $fromIndex, $toIndex)">
+				  </ion-reorder-button>
+				</ion-item>
+				</ion-list>
 	</ion-content>
 	<ion-footer-bar align-title="left" class="bar-positive">
 		<button ui-sref="projects/create-project" class="row-center button-center button button-icon ion-plus-round"></button>

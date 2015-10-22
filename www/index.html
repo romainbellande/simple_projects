@@ -15,6 +15,10 @@
   <!-- cordova script (this will be a 404 during development) -->
   <script src="cordova.js"></script>
 
+  <!-- ng storage -->
+  <script src="lib/ngstorage/ngStorage.min.js"></script>
+
+
 </head>
 <body ng-app="app">
   <ion-pane>
@@ -26,7 +30,13 @@
   <script src="app/app.js"></script>
   <script src="app/routes.js"></script>
   <script src="app/constants.js"></script>
-<!-- portal -->
+  <!-- share -->
+  <!-- globalService -->
+  <script src="app/share/globalService.js"></script>
+  <!-- portal -->
+  <!-- main -->
+  <script src="app/portal/main/portalCtrl.js"></script>
+  <script src="app/portal/main/portalService.js"></script>
   <!-- create-account -->
   <script src="app/portal/createAccount/createAccountCtrl.js"></script>
   <script src="app/portal/createAccount/createAccountService.js"></script>
@@ -34,17 +44,21 @@
   <script src="app/portal/login/loginCtrl.js"></script>
   <script src="app/portal/login/loginService.js"></script>
 
-<!-- projects -->
+  <!-- projects -->
   <!-- main -->
   <script src="app/projects/main/projectsCtrl.js"></script>
+  <script src="app/projects/main/projectsService.js"></script>
   <!-- create-project -->
   <script src="app/projects/createProject/createProjectCtrl.js"></script>
+  <script src="app/projects/createProject/createProjectService.js"></script>
   <!-- single-project -->
   <script src="app/projects/singleProject/singleProjectCtrl.js"></script>
+  <script src="app/projects/singleProject/singleProjectService.js"></script>
 
-<!-- tasks -->
+  <!-- tasks -->
   <!-- main -->
   <script src="app/tasks/main/tasksCtrl.js"></script>
+  <script src="app/tasks/main/tasksService.js"></script>
   <!-- create-task -->
   <script src="app/tasks/createTask/createTaskCtrl.js"></script>
   <!-- single-task -->

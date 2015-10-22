@@ -24,11 +24,11 @@ var routes = function($stateProvider,$urlRouterProvider){
     templateUrl: 'app/projects/createProject/createProjectTpl.html'
   })
   .state('projects/single-project',{
-    url: '/projects/single-project',
+    url: '/projects/:projectId/single-project',
     templateUrl: 'app/projects/singleProject/singleProjectTpl.html'
   })
   .state('tasks',{
-    url: '/tasks',
+    url: '/tasks/:projectId',
     templateUrl: 'app/tasks/main/tasksTpl.html'
   })
   .state('tasks/create-task',{

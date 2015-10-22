@@ -1,14 +1,14 @@
 'use strict';
-angular.module('app.services').service('LoginService',[ '$q', '$http', 'GlobalService',
+angular.module('app.services').service('PortalService',[ '$q', '$http', 'GlobalService',
 function($q,$http,GlobalService){
   //var baseUrl = "http://ec2-52-30-32-89.eu-west-1.compute.amazonaws.com:3000";
-  var loginService = {
+  var portalService = {
 
-    connectUser : function(user){
+    getUser : function(userId){
       var q = $q.defer();
       $http({
         method: 'GET',
-        url: GlobalService.baseUrl +  '/user/'+user.name+'/'+user.password
+        url: GlobalService.baseUrl +  '/user/'+userId
       }).then(function successCallback(response){
         q.resolve(response.data);
         console.log(response);
@@ -20,5 +20,5 @@ function($q,$http,GlobalService){
 
 
   };
-  return loginService;
+  return portalService;
 }]);

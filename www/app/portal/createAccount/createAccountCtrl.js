@@ -9,6 +9,7 @@ $scope.connectedUser = {
 };
 
   $scope.createUser = function(user){
+
     console.log(user);
 
     UserService.testUserName(user).then(function(success){

@@ -10,7 +10,8 @@ var app = angular.module('app', [
   'app.directives',
   'app.services',
   'app.constants',
-  'ui.router'
+  'ui.router',
+  'ngStorage'
 ]).run(function(){
 
 });
