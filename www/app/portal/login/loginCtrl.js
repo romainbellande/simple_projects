@@ -24,7 +24,7 @@ $scope.showPopup = function(){
   $scope.connectUser = function(user){
     LoginService.connectUser(user).then(function(success){
       console.log("userid: "+success._id);
-      GlobalService.$storage.userId = success._id;
+      GlobalService.$storage.user = success;
 
       $scope.login_info = "Authentication successfull !";
       $scope.showPopup();

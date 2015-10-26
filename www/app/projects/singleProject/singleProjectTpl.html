@@ -1,24 +1,40 @@
 <ion-view title="login" class="padding" ng-controller="SingleProjectCtrl">
-  <ion-header-bar class="bar bar-header bar-positive" align-title="center">
-    <h1 class="title">{{project.name}}</h1>
-  </ion-header-bar>
-  <ion-content id="single-project-content">
-    <div class="list">
-      <li class="item item-icon-left">
+
+  <ion-content id="single-project-content" class="padding padding-horizontal">
+
+    <div class="list card ">
+
+      <div class="item item-icon-left">
         <i class="icon ion-person"></i>
-        {{project.customer}}
-      </li>
-      <li class="item item-icon-left">
-        <i class="icon ion-quote"></i>
-        {{project.description}}
-      </li>
-      <li class="item">
-				<button ui-sref="tasks({projectId: project._id})" class="button bar icon-right ion-chevron-right">Tasks</button>
-			</li>
+        <h2>{{project.customer}}</h2>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-folder"></i>
+        <h2>{{project.name}}</h2>
+      </div>
+
+      <div class="item item-body">
+        <p>{{project.description}}</p>
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" ui-sref="tasks({projectId: project._id})" ui-sref-opts="{reload: true}">
+          <i class="icon ion-clipboard"></i>
+          Tasks
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-hammer"></i>
+          Resources
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-edit"></i>
+          Edit
+        </a>
+      </div>
 
     </div>
   </ion-content>
-  <ion-footer-bar align-title="left" class="bar-positive">
+  <ion-footer-bar align-title="left" class="bar bar-footer bar-positive">
     <h1 class="title">Projects</h1>
     <button ui-sref="projects" class="button icon-right ion-chevron-left"></button>
   </ion-footer-bar>

@@ -20,11 +20,11 @@ function($q,$http,GlobalService){
     },
 
     getProjects: function(){
-      console.log(GlobalService.$storage.userId);
+      console.log(GlobalService.$storage.user._id);
       var q = $q.defer();
       $http({
         method: 'GET',
-        url: GlobalService.baseUrl +  '/project/owner/'+GlobalService.$storage.userId
+        url: GlobalService.baseUrl +  '/project/owner/'+GlobalService.$storage.user._id
       }).then(function successCallback(response){
         q.resolve(response.data);
         console.log(response);

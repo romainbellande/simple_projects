@@ -5,27 +5,15 @@ angular.module('app.controllers').controller('PortalCtrl', [
     // TODO: Replace "ionic-demo" below with the name of your own Firebase
     /* ------ CREATE USER ------ */
 
-    /* ------ POPUP ------ */
-    $scope.showPopup = function(){
-      var myPopup = $ionicPopup.show({
-        title: 'Connexion successfull !',
-        scope: $scope
-      });
-      myPopup.then(function(res) {
-      });
-      $timeout(function() {
-        myPopup.close(); //close the popup after 3 seconds for some reason
-        $location.path('/projects');
-      }, 1000);
-    }
+
     /* ------ GET USER ------ */
 
     function getUser(){
-      console.log("userId stored: "+GlobalService.$storage.userId);
-      if(GlobalService.$storage.userId != null){
+      console.log("userId stored: "+GlobalService.$storage.user._id);
+      if(GlobalService.$storage.user._id != null){
         $scope.userExist = true;
-        PortalService.getUser(GlobalService.$storage.userId).then(function(success){
-          $scope.showPopup();
+        PortalService.getUser(GlobalService.$storage.user._id).then(function(success){
+          GlobalService.showPopup1("Authenticated successfully", '/projects', $scope);
         },function(error){
           $scope.login_info = "Query failed !";
         });
@@ -35,7 +23,7 @@ angular.module('app.controllers').controller('PortalCtrl', [
       }
     }
 
-    
+
     getUser();
 
   }]);

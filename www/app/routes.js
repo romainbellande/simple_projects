@@ -20,7 +20,7 @@ var routes = function($stateProvider,$urlRouterProvider){
     templateUrl: 'app/projects/main/projectsTpl.html'
   })
   .state('projects/create-project',{
-    url: '/projects/create-project',
+    url: '/projects/create-project/',
     templateUrl: 'app/projects/createProject/createProjectTpl.html'
   })
   .state('projects/single-project',{
@@ -32,11 +32,11 @@ var routes = function($stateProvider,$urlRouterProvider){
     templateUrl: 'app/tasks/main/tasksTpl.html'
   })
   .state('tasks/create-task',{
-    url: '/tasks/create-task',
+    url: '/tasks/create-task/:projectId',
     templateUrl: 'app/tasks/createTask/createTaskTpl.html'
   })
   .state('tasks/single-task',{
-    url: '/tasks/single-task',
+    url: '/tasks/:projectId/:taskId/single-task',
     templateUrl: 'app/tasks/singleTask/singleTaskTpl.html'
   });
 }

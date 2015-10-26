@@ -1,5 +1,6 @@
 'use strict';
-angular.module('app.services').service('TasksService',[ '$q', '$http','GlobalService',
+angular.module('app.services').service('TasksService',[
+  '$q', '$http','GlobalService',
 function($q,$http,GlobalService){
   var tasksService = {
 

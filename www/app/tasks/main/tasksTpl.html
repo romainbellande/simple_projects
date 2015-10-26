@@ -1,19 +1,24 @@
-<ion-view title="login" class="padding" ng-controller="TasksCtrl" >
-  <ion-header-bar class="bar bar-header bar-positive" align-title="center">
+<ion-view title="login"  ng-controller="TasksCtrl" >
+
+  <ion-header-bar class="bar bar-header bar-positive item item-icon-left" align-title="center">
+    <i class="icon ion-folder"></i>
+    <h1 class="title">{{project.name}}</h1>
+  </ion-header-bar>
+  <ion-header-bar class="bar bar-subheader bar-positive" align-title="center">
     <i class="button button-icon ion-minus-circled" ng-click="shouldShowDelete = !shouldShowDelete"></i>
-    <h1 class="title">{{projectName}}</h1>
+    <h1 class="title">Tasks</h1>
     <i class="button" ng-click="shouldShowReorder = !shouldShowReorder">Reorder</i>
   </ion-header-bar>
-  <ion-content >
 
+  <ion-content >
     <ion-list
     show-delete="shouldShowDelete"
     show-reorder="shouldShowReorder">
-    <ion-item ng-repeat="task in tasks track by $index" class="item item-icon-right ">
-{{task.title}}
-<i class="icon ion-chevron-right"></i>
+    <ion-item ui-sref="tasks/single-task({projectId: project._id, taskId: task._id})" ng-repeat="task in tasks track by $index" class="item item-icon-right ">
+      {{task.name}}
+      <i class="icon ion-chevron-right"></i>
       <ion-delete-button class="ion-minus-circled"
-      ng-click="tasks.splice($index, 1)">
+      ng-click="deleteTask(task._id,$index)">
     </ion-delete-button>
 
     <ion-reorder-button class="ion-navicon"
@@ -23,8 +28,8 @@
 </ion-list>
 
 </ion-content>
-<ion-footer-bar align-title="left" class="bar-positive">
-  <button ui-sref="tasks/create-task" class="row-center button-center button button-icon ion-plus-round"></button>
-  <button ui-sref="projects/single-project" class="button icon-right ion-chevron-left"></button>
+<ion-footer-bar align-title="left" class="bar bar-footer bar-positive">
+  <button ui-sref="tasks/create-task({projectId: project._id})" class="row-center button-center button button-icon ion-plus-round" ng-click="shouldShowReorder = false; shouldShowDelete = false"></button>
+  <button ui-sref="projects/single-project({projectId: project._id})" class="button icon-right ion-chevron-left" ng-click="shouldShowReorder = false; shouldShowDelete = false"></button>
 </ion-footer-bar>
 </ion-view>

@@ -12,7 +12,7 @@ function($q,$http,GlobalService){
           project_name: project.name,
           project_customer: project.customer,
           project_description: project.description,
-          project_ownerid: GlobalService.$storage.userId
+          project_ownerid: GlobalService.$storage.user._id
         }
       }).then(function successCallback(response){
         q.resolve(response.data);

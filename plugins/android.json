@@ -23,6 +23,14 @@
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -43,6 +51,12 @@
             "PACKAGE_NAME": "com.ionicframework.simpleprojects952090"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.simpleprojects952090"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.simpleprojects952090"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.simpleprojects952090"
         }
     },

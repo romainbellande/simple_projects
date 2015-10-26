@@ -1,0 +1,27 @@
+<ion-view title="create task" class="padding" ng-controller="CreateTaskCtrl">
+	<ion-header-bar class="bar bar-header bar-positive" align-title="center">
+		<h1 class="title">{{project.name}}</h1>
+	</ion-header-bar>
+	<ion-header-bar class="bar bar-subheader bar-positive" align-title="center">
+		<h1 class="title">New task</h1>
+	</ion-header-bar>
+	<ion-content>
+        <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Task name</span>
+        <input type="text" ng-model="task.name">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Description</span>
+        <input type="text" ng-model="task.description">
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive icon-right ion-plus-circled" ng-click="createTask(task)">Add</button>
+      </label>
+    </div>
+	</ion-content>
+	<ion-footer-bar align-title="left" class="bar bar-footer bar-positive">
+	  <h1 class="title"></h1>
+	    <button ui-sref="tasks({projectId: project._id})" class="button icon-right ion-chevron-left"></button>
+	</ion-footer-bar>
+</ion-view>
