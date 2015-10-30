@@ -7714,6 +7714,24 @@ a.button {
 .button-center {
   margin: 0 auto; }
 
+/* ------ TASK MAIN ------ */
+#create-task {
+  right: 0px; }
+
+/* ------ PROJECTS MAIN ------ */
+.create-button {
+  margin: 0 auto;
+  right: 27px;
+  bottom: 18px; }
+
 /* ------ SINGLE-PROJECT ------ */
 #single-project-content textarea {
   resize: none; }
+
+.spinner svg {
+  position: absolute;
+  left: 45%;
+  top: 40%; }
+
+.scroll {
+  height: 100%; }

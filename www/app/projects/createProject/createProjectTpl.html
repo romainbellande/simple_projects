@@ -4,25 +4,24 @@
 	</ion-header-bar>
 	<ion-content>
     <div class="list">
-      <label class="item item-input">
-        <span class="input-label">Project name</span>
-        <input type="text" ng-model="project.name">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Customer</span>
-        <input type="text" ng-model="project.customer">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Description</span>
-        <textarea type="text" ng-model="project.description"></textarea>
+      <label class="item">
+				<ion-md-input placeholder="Project name" highlight-color="balanced" type="text" ng-model="project.name"></ion-md-input>
       </label>
       <label class="item">
-        <button class="button button-block button-positive icon-right ion-plus-circled" ng-click="createProject(project)">Add</button>
+				<ion-md-input placeholder="Customer" highlight-color="balanced" type="text" ng-model="project.customer"></ion-md-input>
+          </label>
+      <label class="item">
+				<ion-md-input placeholder="Description" highlight-color="balanced" type="text" ng-model="project.description"></ion-md-input>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="createProject(project)">Add</button>
       </label>
     </div>
+
 	</ion-content>
-	<ion-footer-bar align-title="left" class="bar bar-footer bar-positive">
-	  <h1 class="title"></h1>
-	    <button ui-sref="projects" class="button icon-right ion-chevron-left"></button>
-	</ion-footer-bar>
+	<ion-footer-bar class="tabs tabs-icon-only bar bar-footer bar-positive">
+      <a class="tab-item item-icon-right" ui-sref="projects">
+        <i class="icon icon-right ion-chevron-left"></i>
+      </a>
+  </ion-footer-bar>
 </ion-view>

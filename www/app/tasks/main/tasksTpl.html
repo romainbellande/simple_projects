@@ -28,8 +28,16 @@
 </ion-list>
 
 </ion-content>
-<ion-footer-bar align-title="left" class="bar bar-footer bar-positive">
-  <button ui-sref="tasks/create-task({projectId: project._id})" class="row-center button-center button button-icon ion-plus-round" ng-click="shouldShowReorder = false; shouldShowDelete = false"></button>
-  <button ui-sref="projects/single-project({projectId: project._id})" class="button icon-right ion-chevron-left" ng-click="shouldShowReorder = false; shouldShowDelete = false"></button>
+<ion-footer-bar class="tabs tabs-icon-only bar bar-footer bar-positive">
+  <main-menu></main-menu>
+  <a id="create-task" class="create-button md-fab md-button md-ink-ripple" ui-sref="tasks/create-task({projectId: project._id})">
+    <md-icon aria-label="add project" md-svg-src="assets/img/material-icons/ic_add_white_24px.svg" ng-click="shouldShowReorder = false; shouldShowDelete = false"></md-icon>
+  </a>
+  <back>
+    <a class="tab-item item-icon-right" ui-sref="projects/single-project({projectId: project._id})">
+      <i class="icon ion-chevron-left" ng-click="shouldShowReorder = false; shouldShowDelete = false"></i>
+    </a>
+  </back>
+
 </ion-footer-bar>
 </ion-view>

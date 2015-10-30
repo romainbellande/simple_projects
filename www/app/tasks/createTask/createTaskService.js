@@ -1,10 +1,14 @@
 'use strict';
-angular.module('app.services').service('CreateTaskService',[ '$q', '$http','GlobalService',
-function($q,$http,GlobalService){
+angular.module('app.services').service('CreateTaskService',[
+  '$q', '$http','GlobalService', '$ionicLoading',
+function($q,$http,GlobalService, $ionicLoading){
   var createTaskService = {
 
     createTask : function(task, projectId){
       var q = $q.defer();
+      $ionicLoading.show({
+        template: 'loading...'
+      });
       $http({
         method: 'POST',
         url: GlobalService.baseUrl + '/task',
@@ -15,8 +19,10 @@ function($q,$http,GlobalService){
         }
       }).then(function successCallback(response){
         q.resolve(response.data);
+        $ionicLoading.hide();
       },function errorCallback(response){
         q.reject(response);
+        $ionicLoading.hide();
       });
       return q.promise;
     }

@@ -6,6 +6,8 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('app', [
   'ionic',
+  'ngMaterial',
+  'ionMdInput',
   'app.controllers',
   'app.directives',
   'app.services',

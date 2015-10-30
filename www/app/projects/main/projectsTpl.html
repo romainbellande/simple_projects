@@ -5,6 +5,7 @@
 		<i class="button" ng-click="shouldShowReorder = !shouldShowReorder">Reorder</i>
 	</ion-header-bar>
 	<ion-content>
+
 		<ion-list
 		show-delete="shouldShowDelete"
 		show-reorder="shouldShowReorder">
@@ -22,14 +23,10 @@
 </ion-list>
 </ion-content>
 <ion-footer-bar class="tabs tabs-icon-only bar bar-footer bar-positive">
-		<a class="tab-item">
-			<i class="icon ion-person"></i>
+	<main-menu></main-menu>
+		<a id="create-button" class="create-button md-fab md-button md-ink-ripple" ui-sref="projects/create-project">
+			<md-icon aria-label="add project" md-svg-src="assets/img/material-icons/ic_add_white_24px.svg" ng-click="shouldShowReorder = false; shouldShowDelete = false"></md-icon>
 		</a>
-		<a class="tab-item">
-			<i class="icon ion-gear-a"></i>
-		</a>
-		<a class="tab-item" ui-sref="projects/create-project">
-			<i class="icon ion-plus-round" ng-click="shouldShowReorder = false; shouldShowDelete = false"></i>
-		</a>
+
 </ion-footer-bar>
 </ion-view>

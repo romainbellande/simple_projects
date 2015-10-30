@@ -1,11 +1,18 @@
 angular.module('app.controllers').controller('ProjectsCtrl', [
-  '$rootScope', '$scope', '$location', 'ProjectsService', 'GlobalService',
-function($rootScope, $scope, $location, ProjectsService, GlobalService) {
+  '$rootScope', '$scope', '$location', 'ProjectsService', 'GlobalService', '$ionicPopover',
+function($rootScope, $scope, $location, ProjectsService, GlobalService, $ionicPopover) {
 
 
   $scope.shouldShowReorder = false;
   $scope.shouldShowDelete = false;
   $scope.user = GlobalService.$storage.user;
+/*
+  $ionicPopover.fromTemplateUrl('app/menu/menuTpl.html', {
+      scope: $scope,
+    }).then(function(menu) {
+      $scope.menu = menu;
+    });*/
+
   function getProjects(){
       ProjectsService.getProjects().then(function(success){
         ProjectsService.projects = success;
