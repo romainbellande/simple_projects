@@ -4,14 +4,14 @@ angular.module('app.services').service('SingleTaskService',[
 function($q,$http,GlobalService, $ionicLoading){
   var singleTaskService = {
 
-    getTask: function(id){
+    getTask: function(projectId, id){
       var q = $q.defer();
       $ionicLoading.show({
         template: 'loading...'
       });
       $http({
         method: 'GET',
-        url: GlobalService.baseUrl +  '/task/'+id
+        url: GlobalService.baseUrl +  '/project/'+projectId+'/task/'+id
       }).then(function successCallback(response){
         q.resolve(response.data);
         console.log(response);
@@ -23,16 +23,16 @@ function($q,$http,GlobalService, $ionicLoading){
       return q.promise;
     },
 
-    deleteTask: function(id){
+    deleteTask: function(projectId, id){
       var q = $q.defer();
       $ionicLoading.show({
         template: 'loading...'
       });
       $http({
         method: 'DELETE',
-        url: GlobalService.baseUrl +  '/task/'+id
+        url: GlobalService.baseUrl + '/project/'+projectId+'/task/'+id
       }).then(function successCallback(response){
-        q.resolve(response.data);
+        q.resolve(response);
         $ionicLoading.hide();
       },function errorCallback(response){
         q.reject(response);

@@ -1,6 +1,6 @@
 angular.module('app.controllers').controller('TasksCtrl', [
-  '$rootScope', '$scope', '$location', '$stateParams', 'SingleProjectService', 'TasksService',
-function($rootScope, $scope, $location, $stateParams, SingleProjectService, TasksService) {
+  '$rootScope', '$scope', '$location', '$stateParams', 'SingleProjectService', 'TasksService','SingleTaskService',
+function($rootScope, $scope, $location, $stateParams, SingleProjectService, TasksService, SingleTaskService) {
   $scope.shouldShowReorder = false;
   $scope.shouldShowDelete = false;
 
@@ -13,10 +13,10 @@ function($rootScope, $scope, $location, $stateParams, SingleProjectService, Task
   SingleProjectService.getProject($stateParams.projectId).then(function(success){
     $scope.project = success;
   });
-  $scope.deleteTask = function(taskId, index){
-    console.log("index supprimé: "+index);
-    TasksService.deleteTask(taskId).then(function(success){
+  $scope.deleteTask = function(projectId, taskId, index){
+    SingleTaskService.deleteTask(projectId,taskId).then(function(success){
       TasksService.tasks.splice(index,1);
+      console.log("index supprimé: "+index);
     });
   };
   $scope.moveItem = function(item, fromIndex, toIndex) {

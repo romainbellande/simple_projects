@@ -11,14 +11,15 @@ function($q,$http,GlobalService, $ionicLoading){
       });
       $http({
         method: 'POST',
-        url: GlobalService.baseUrl + '/task',
+        url: GlobalService.baseUrl + '/project/'+projectId+'/task/',
         params: {
           task_name: task.name,
-          task_description: task.description,
-          task_projectid: projectId
+          task_description: task.description
         }
       }).then(function successCallback(response){
         q.resolve(response.data);
+
+        console.log("task: ", response.data);
         $ionicLoading.hide();
       },function errorCallback(response){
         q.reject(response);

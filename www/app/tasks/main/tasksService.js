@@ -13,28 +13,10 @@ function($q, $http, GlobalService, $ionicLoading){
       });
       $http({
         method: 'GET',
-        url: GlobalService.baseUrl +  '/task/project/'+projectId
+        url: GlobalService.baseUrl +  '/project/'+projectId+'/task/'
       }).then(function successCallback(response){
         q.resolve(response.data);
-        console.log(response);
-        $ionicLoading.hide();
-      },function errorCallback(response){
-        q.reject(response);
-        $ionicLoading.hide();
-      });
-      return q.promise;
-    },
-
-    deleteTask: function(id){
-      var q = $q.defer();
-      $ionicLoading.show({
-        template: 'loading...'
-      });
-      $http({
-        method: 'DELETE',
-        url: GlobalService.baseUrl +  '/task/'+id
-      }).then(function successCallback(response){
-        q.resolve(response.data);
+        console.log("task: "+response);
         $ionicLoading.hide();
       },function errorCallback(response){
         q.reject(response);
@@ -42,8 +24,6 @@ function($q, $http, GlobalService, $ionicLoading){
       });
       return q.promise;
     }
-
-
   };
   return tasksService;
 

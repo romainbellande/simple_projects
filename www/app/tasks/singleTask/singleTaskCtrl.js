@@ -5,7 +5,7 @@ function($rootScope, $scope, $location, $stateParams,SingleTaskService, SinglePr
     $scope.project = success;
   });
 
-  SingleTaskService.getTask($stateParams.taskId).then(function(success){
+  SingleTaskService.getTask($stateParams.projectId, $stateParams.taskId).then(function(success){
     $scope.task = success;
   });
 
