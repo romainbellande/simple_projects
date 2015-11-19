@@ -5,9 +5,7 @@ function($localStorage, $sessionStorage, $ionicPopup, $timeout, $location){
   var globalService = {
 
     config: YAML.load('config/config.yml'),
-
-
-    //baseUrl : "http://ec2-52-30-32-89.eu-west-1.compute.amazonaws.com:3000",
+        
     baseUrl : YAML.load('config/config.yml').server.baseUrl.local,
     $storage : $localStorage.$default({
         user: new Array()
