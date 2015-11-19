@@ -10,7 +10,7 @@ angular.module('app.controllers').controller('PortalCtrl', [
 
     function getUser(){
       console.log("userId stored: "+GlobalService.$storage.user._id);
-      if(GlobalService.$storage.user._id != null){
+      if(typeof GlobalService.$storage.user._id != "undefined"){
         $scope.userExist = true;
         PortalService.getUser(GlobalService.$storage.user._id).then(function(success){
           GlobalService.showPopup1("Authenticated successfully", '/projects', $scope);

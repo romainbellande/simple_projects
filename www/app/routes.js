@@ -24,20 +24,24 @@ var routes = function($stateProvider,$urlRouterProvider){
     templateUrl: 'app/projects/createProject/createProjectTpl.html'
   })
   .state('projects/single-project',{
-    url: '/projects/:projectId/single-project',
+    url: '/projects/:projectId/:projectIndex/single-project',
     templateUrl: 'app/projects/singleProject/singleProjectTpl.html'
+  })
+  .state('projects/edit-project',{
+    url: '/projects/:projectId/edit-project',
+    templateUrl: 'app/projects/singleProject/editProject/editProjectTpl.html'
   })
   .state('tasks',{
     url: '/tasks/:projectId',
-    templateUrl: 'app/tasks/main/tasksTpl.html'
+    templateUrl: 'app/projects/singleProject/tasks/main/tasksTpl.html'
   })
   .state('tasks/create-task',{
     url: '/tasks/create-task/:projectId',
-    templateUrl: 'app/tasks/createTask/createTaskTpl.html'
+    templateUrl: 'app/projects/singleProject/tasks/createTask/createTaskTpl.html'
   })
   .state('tasks/single-task',{
     url: '/tasks/:projectId/:taskId/single-task',
-    templateUrl: 'app/tasks/singleTask/singleTaskTpl.html'
+    templateUrl: 'app/projects/singleProject/tasks/singleTask/singleTaskTpl.html'
   });
 }
 

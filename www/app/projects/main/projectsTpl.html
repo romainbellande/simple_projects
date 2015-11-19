@@ -9,7 +9,7 @@
 		<ion-list
 		show-delete="shouldShowDelete"
 		show-reorder="shouldShowReorder">
-		<ion-item ui-sref="projects/single-project({projectId: project._id})" ng-repeat="project in projects track by $index" class="item item-icon-right ">
+		<ion-item ui-sref="projects/single-project({projectId: project._id, projectIndex: $index})" ng-repeat="project in projects track by $index" class="item item-icon-right ">
 			{{project.name}}
 			<i class="icon ion-chevron-right"></i>
 			<ion-delete-button class="ion-minus-circled"
