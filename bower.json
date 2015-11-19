@@ -8,6 +8,7 @@
     "angular-elastic": "~2.5.1",
     "ngstorage": "~0.3.9",
     "ion-md-input": "~1.0.4",
-    "angular-material": "master"
+    "angular-material": "master",
+    "yamljs": "~0.1.5"
   }
 }

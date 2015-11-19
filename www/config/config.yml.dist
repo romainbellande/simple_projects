@@ -1,0 +1,4 @@
+server:
+    baseUrl:
+        local: http://localhost:3000
+        remote: http://server_address:3000        

@@ -5,7 +5,7 @@ angular.module('app.controllers').controller('PortalCtrl', [
     // TODO: Replace "ionic-demo" below with the name of your own Firebase
     /* ------ CREATE USER ------ */
 
-
+    
     /* ------ GET USER ------ */
 
     function getUser(){
