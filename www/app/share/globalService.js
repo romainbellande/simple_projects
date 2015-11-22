@@ -5,7 +5,7 @@ function($localStorage, $sessionStorage, $ionicPopup, $timeout, $location){
   var globalService = {
 
     config: YAML.load('config/config.yml'),
-        
+
     baseUrl : YAML.load('config/config.yml').server.baseUrl.local,
     $storage : $localStorage.$default({
         user: new Array()

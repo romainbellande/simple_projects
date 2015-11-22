@@ -5,7 +5,7 @@ function($q, $http, GlobalService, $ionicLoading){
   var singleProjectService = {
 
     index: null,
-    
+
     getProject: function(id){
       var q = $q.defer();
       $ionicLoading.show({

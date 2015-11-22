@@ -6,8 +6,7 @@ function($rootScope, $scope, $location, $stateParams, SingleProjectService, Task
 
   function getTasks(){
     TasksService.getTasks($stateParams.projectId).then(function(success){
-      TasksService.tasks = success;
-      $scope.tasks = TasksService.tasks;
+      TasksService.tasks = success;      
     });
   }
   SingleProjectService.getProject($stateParams.projectId).then(function(success){
@@ -25,4 +24,9 @@ function($rootScope, $scope, $location, $stateParams, SingleProjectService, Task
     TasksService.tasks.splice(toIndex, 0, item);
   };
   getTasks();
+  $scope.$watch(function () { return TasksService.tasks }, function (newVal, oldVal) {
+      if (typeof newVal !== 'undefined') {
+          $scope.tasks = TasksService.tasks;
+      }
+  });
 }]);

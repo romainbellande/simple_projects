@@ -18,8 +18,7 @@ function($q, $http, GlobalService, $ionicLoading){
           project_description: project.description
         }
       }).then(function successCallback(response){
-        q.resolve(response.data);
-        console.log(response);
+        q.resolve(response.data);        
         $ionicLoading.hide();
       },function errorCallback(response){
         q.reject(response);

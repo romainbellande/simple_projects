@@ -15,11 +15,12 @@
   <script src="lib/ionic/js/ionic.bundle.js"></script>
   <!-- ion-md-input -->
   <script src="lib/angular-aria/angular-aria.js"></script>
-    <script src="lib/angular-animate/angular-animate.js"></script>
+  <script src="lib/angular-animate/angular-animate.js"></script>
   <script src="lib/angular-material/angular-material.min.js"></script>
   <script src="lib/ion-md-input/js/ion-md-input.min.js"></script>
 
-
+  <!-- yaml js -->
+  <script src="lib/yamljs/bin/yaml.js"></script>
   <!-- cordova script (this will be a 404 during development) -->
   <script src="cordova.js"></script>
 
@@ -30,10 +31,10 @@
 </head>
 <body ng-app="app" class="platform-android platform-cordova platform-webview">
 
-    <ion-pane >
-      <ion-nav-view>
-      </ion-nav-view>
-    </ion-pane>
+  <ion-pane >
+    <ion-nav-view>
+    </ion-nav-view>
+  </ion-pane>
 
 
   <!-- your app's js -->
@@ -68,16 +69,19 @@
   <!-- single-project -->
   <script src="app/projects/singleProject/singleProjectCtrl.js"></script>
   <script src="app/projects/singleProject/singleProjectService.js"></script>
+  <!-- edit-project -->
+  <script src="app/projects/singleProject/editProject/editProjectCtrl.js"></script>
+  <script src="app/projects/singleProject/editProject/editProjectService.js"></script>
 
   <!-- TASKS -->
   <!-- main -->
-  <script src="app/tasks/main/tasksCtrl.js"></script>
-  <script src="app/tasks/main/tasksService.js"></script>
+  <script src="app/projects/singleProject/tasks/main/tasksCtrl.js"></script>
+  <script src="app/projects/singleProject/tasks/main/tasksService.js"></script>
   <!-- create-task -->
-  <script src="app/tasks/createTask/createTaskCtrl.js"></script>
-  <script src="app/tasks/createTask/createTaskService.js"></script>
+  <script src="app/projects/singleProject/tasks/createTask/createTaskCtrl.js"></script>
+  <script src="app/projects/singleProject/tasks/createTask/createTaskService.js"></script>
   <!-- single-task -->
-  <script src="app/tasks/singleTask/singleTaskCtrl.js"></script>
-  <script src="app/tasks/singleTask/singleTaskService.js"></script>
+  <script src="app/projects/singleProject/tasks/singleTask/singleTaskCtrl.js"></script>
+  <script src="app/projects/singleProject/tasks/singleTask/singleTaskService.js"></script>
 </body>
 </html>

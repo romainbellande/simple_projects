@@ -32,6 +32,14 @@ function($rootScope, $scope, $location, ProjectsService, GlobalService, $ionicPo
       ProjectsService.projects.splice(fromIndex, 1);
       ProjectsService.projects.splice(toIndex, 0, item);
     };
+
+
   getProjects();
+
+  $scope.$watch(function () { return ProjectsService.projects }, function (newVal, oldVal) {
+      if (typeof newVal !== 'undefined') {
+          $scope.projects = ProjectsService.projects;
+      }
+  });
 
 }]);
