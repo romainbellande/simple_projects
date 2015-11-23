@@ -6,11 +6,11 @@ function($rootScope, $scope, $location, $stateParams, SingleProjectService, Task
 
   function getTasks(){
     TasksService.getTasks($stateParams.projectId).then(function(success){
-      TasksService.tasks = success;      
+      TasksService.tasks = success;
     });
   }
   SingleProjectService.getProject($stateParams.projectId).then(function(success){
-    $scope.project = success;
+    TasksService.project = success;
   });
   $scope.deleteTask = function(projectId, taskId, index){
     SingleTaskService.deleteTask(projectId,taskId).then(function(success){
@@ -27,6 +27,11 @@ function($rootScope, $scope, $location, $stateParams, SingleProjectService, Task
   $scope.$watch(function () { return TasksService.tasks }, function (newVal, oldVal) {
       if (typeof newVal !== 'undefined') {
           $scope.tasks = TasksService.tasks;
+      }
+  });
+  $scope.$watch(function () { return TasksService.project }, function (newVal, oldVal) {
+      if (typeof newVal !== 'undefined') {
+          $scope.project = TasksService.project;
       }
   });
 }]);

@@ -3,7 +3,7 @@ angular.module('app.services').service('SingleTaskService',[
   '$q', '$http','GlobalService', '$ionicLoading',
 function($q,$http,GlobalService, $ionicLoading){
   var singleTaskService = {
-
+     index: null,
     getTask: function(projectId, id){
       var q = $q.defer();
       $ionicLoading.show({
@@ -14,7 +14,7 @@ function($q,$http,GlobalService, $ionicLoading){
         url: GlobalService.baseUrl +  '/project/'+projectId+'/task/'+id
       }).then(function successCallback(response){
         q.resolve(response.data);
-        console.log(response);
+        console.log("my task: ",response);
         $ionicLoading.hide();
       },function errorCallback(response){
         q.reject(response);

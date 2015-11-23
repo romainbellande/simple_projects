@@ -1,0 +1,35 @@
+<ion-view title="login" class="padding" ng-controller="EditTaskCtrl">
+
+  <ion-content class="padding padding-horizontal">
+
+    <div class="list card ">
+
+      <div class="item item-icon-left">
+        <i class="icon ion-folder"></i>
+         <input type="text" ng-model="project.name">
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-clipboard"></i>
+         <input type="text" ng-model="task.name">
+      </div>
+
+      <div class="item item-body">
+         <input type="text" ng-model="task.description">
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" ng-click="editTask(task)">
+          <i class="icon ion-checkmark-round"></i>
+          Validate
+        </a>
+      </div>
+
+    </div>
+  </ion-content>
+  <ion-footer-bar class="tabs tabs-icon-only bar bar-footer bar-positive">
+    <main-menu></main-menu>
+    <a class="tab-item item-icon-right" ui-sref="tasks/single-task({projectId: project._id, taskId: task._id,taskIndex: -1})">
+      <i class="icon ion-chevron-left"></i>
+    </a>
+  </ion-footer-bar>
+</ion-view>

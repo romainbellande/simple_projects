@@ -40,8 +40,12 @@ var routes = function($stateProvider,$urlRouterProvider){
     templateUrl: 'app/projects/singleProject/tasks/createTask/createTaskTpl.html'
   })
   .state('tasks/single-task',{
-    url: '/tasks/:projectId/:taskId/single-task',
+    url: '/tasks/:projectId/:taskId/:taskIndex/single-task',
     templateUrl: 'app/projects/singleProject/tasks/singleTask/singleTaskTpl.html'
+  })
+  .state('tasks/edit-task',{
+    url: '/tasks/:projectId/:taskId/edit-task',
+    templateUrl: 'app/projects/singleProject/tasks/singleTask/editTask/editTaskTpl.html'
   });
 }
 

@@ -14,13 +14,9 @@ angular.module('app.controllers').controller('EditProjectCtrl', [
           ProjectsService.projects[SingleProjectService.index] = success;
           GlobalService.showPopup1("Project edited successfully !",'/projects/'+$stateParams.projectId+'/'+SingleProjectService.index+'/single-project',$scope);
           console.log("mon projet maj", success);
-          $rootScope.project = success;
       },function(error){
             console.log(error);
           });
     };
 
-$scope.$watch(ProjectsService.projects,function(){
-    console.log("projects maj");
-});
   }]);

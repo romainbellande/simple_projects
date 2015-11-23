@@ -18,7 +18,7 @@
       </div>
 
       <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" href="#">
+        <a class="tab-item" ui-sref='tasks/edit-task({projectId: project._id, taskId: task._id})'>
           <i class="icon ion-edit"></i>
           Edit
         </a>
@@ -29,7 +29,7 @@
   </ion-content>
   <ion-footer-bar class="tabs tabs-icon-only bar bar-footer bar-positive">
     <main-menu></main-menu>
-  		<a class="tab-item item-icon-right" ui-sref="tasks({projectId: project._id})" ui-sref-opts="{reload: true}">
+  		<a class="tab-item item-icon-right" ui-sref="tasks({projectId: project._id})" >
   			<i class="icon icon-right ion-chevron-left" ng-click="shouldShowReorder = false; shouldShowDelete = false"></i>
   		</a>
   </ion-footer-bar>

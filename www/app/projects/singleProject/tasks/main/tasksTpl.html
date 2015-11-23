@@ -14,7 +14,7 @@
     <ion-list
     show-delete="shouldShowDelete"
     show-reorder="shouldShowReorder">
-    <ion-item ui-sref="tasks/single-task({projectId: project._id, taskId: task._id})" ng-repeat="task in tasks track by $index" class="item item-icon-right ">
+    <ion-item ui-sref="tasks/single-task({projectId: project._id, taskId: task._id, taskIndex: $index})" ng-repeat="task in tasks track by $index" class="item item-icon-right ">
       {{task.name}}
       <i class="icon ion-chevron-right"></i>
       <ion-delete-button class="ion-minus-circled"

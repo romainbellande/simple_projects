@@ -3,7 +3,7 @@ angular.module('app.services').service('TasksService',[
   '$q', '$http','GlobalService', '$ionicLoading',
 function($q, $http, GlobalService, $ionicLoading){
   var tasksService = {
-
+    project: null,
     tasks: new Array(),
 
     getTasks: function(projectId){
