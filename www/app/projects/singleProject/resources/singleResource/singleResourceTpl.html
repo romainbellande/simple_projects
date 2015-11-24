@@ -1,6 +1,6 @@
-<ion-view title="single task" class="padding" ng-controller="SingleTaskCtrl">
+<ion-view title="single resource" class="padding" ng-controller="SingleResourceCtrl">
 
-  <ion-content id="single-task-content" class="padding padding-horizontal">
+  <ion-content id="single-resource-content" class="padding padding-horizontal">
 
 
     <div class="list card ">
@@ -9,16 +9,20 @@
         <h2>{{project.name}}</h2>
       </div>
       <div class="item item-icon-left">
-        <i class="icon ion-clipboard"></i>
-        <h2>{{task.name}}</h2>
+        <i class="icon ion-hammer"></i>
+        <h2>{{resource.name}}</h2>
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-pricetag"></i>
+        <h2>{{resource.value}}</h2>
       </div>
 
       <div class="item item-body">
-        <p>{{task.description}}</p>
+        <p>{{resource.description}}</p>
       </div>
 
       <div class="item tabs tabs-secondary tabs-icon-left">
-        <a class="tab-item" ui-sref='tasks/edit-task({projectId: project._id, taskId: task._id})'>
+        <a class="tab-item" ui-sref='resources/edit-resource({projectId: project._id, resourceId: resource._id})'>
           <i class="icon ion-edit"></i>
           Edit
         </a>
@@ -29,7 +33,7 @@
   </ion-content>
   <ion-footer-bar class="tabs tabs-icon-only bar bar-footer bar-positive">
     <main-menu></main-menu>
-  		<a class="tab-item item-icon-right" ui-sref="tasks({projectId: project._id})" >
+  		<a class="tab-item item-icon-right" ui-sref="resources({projectId: project._id})" >
   			<i class="icon icon-right ion-chevron-left" ng-click="shouldShowReorder = false; shouldShowDelete = false"></i>
   		</a>
   </ion-footer-bar>

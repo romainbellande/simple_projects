@@ -9097,7 +9097,7 @@ a.button {
   margin: 0 auto; }
 
 /* ------ TASK MAIN ------ */
-#create-task {
+#create-task, #create-resource {
   right: 0px; }
 
 /* ------ PROJECTS MAIN ------ */

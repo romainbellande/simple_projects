@@ -7,19 +7,20 @@ angular.module('app.controllers').controller('SingleProjectCtrl', [
 
         function getProject(){
             SingleProjectService.getProject($stateParams.projectId).then(function(success){
-                ProjectsService.projects[SingleProjectService.index] = success;
+                SingleProjectService.project = success;
             },function(error){
                 console.log("getProject() failed !");
             });
         }
-
         getProject();
         // Genius function <3 <3 <3
-        $scope.$watch(function () { return ProjectsService.projects[SingleProjectService.index] }, function (newVal, oldVal) {
+        $scope.$watch(function () { return SingleProjectService.project }, function (newVal, oldVal) {
             if (typeof newVal !== 'undefined') {
-                $scope.project = ProjectsService.projects[SingleProjectService.index];
+                $scope.project = SingleProjectService.project;
+                ProjectsService.projects[SingleProjectService.index] = SingleProjectService.project;
             }
         });
+    
 
 
 

@@ -1,21 +1,21 @@
 'use strict';
-angular.module('app.services').service('TasksService',[
+angular.module('app.services').service('ResourcesService',[
   '$q', '$http','GlobalService', '$ionicLoading',
 function($q, $http, GlobalService, $ionicLoading){
-  var tasksService = {
-    tasks: new Array(),
+  var resourcesService = {
+    resources: new Array(),
 
-    getTasks: function(projectId){
+    getResources: function(projectId){
       var q = $q.defer();
       $ionicLoading.show({
         template: 'loading...'
       });
       $http({
         method: 'GET',
-        url: GlobalService.baseUrl +  '/project/'+projectId+'/task/'
+        url: GlobalService.baseUrl +  '/project/'+projectId+'/resource/'
       }).then(function successCallback(response){
         q.resolve(response.data);
-        console.log("task: "+response);
+        console.log("resource: "+response);
         $ionicLoading.hide();
       },function errorCallback(response){
         q.reject(response);
@@ -24,6 +24,6 @@ function($q, $http, GlobalService, $ionicLoading){
       return q.promise;
     }
   };
-  return tasksService;
+  return resourcesService;
 
 }]);

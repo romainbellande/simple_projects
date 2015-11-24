@@ -46,6 +46,22 @@ var routes = function($stateProvider,$urlRouterProvider){
   .state('tasks/edit-task',{
     url: '/tasks/:projectId/:taskId/edit-task',
     templateUrl: 'app/projects/singleProject/tasks/singleTask/editTask/editTaskTpl.html'
+  })
+  .state('resources',{
+    url: '/resources/:projectId',
+    templateUrl: 'app/projects/singleProject/resources/main/resourcesTpl.html'
+  })
+  .state('resources/create-resource',{
+    url: '/resources/create-resource/:projectId',
+    templateUrl: 'app/projects/singleProject/resources/createResource/createResourceTpl.html'
+  })
+  .state('resources/single-resource',{
+    url: '/resources/:projectId/:resourceId/:resourceIndex/single-resource',
+    templateUrl: 'app/projects/singleProject/resources/singleResource/singleResourceTpl.html'
+  })
+  .state('resources/edit-resource',{
+    url: '/resources/:projectId/:resourceId/edit-resource',
+    templateUrl: 'app/projects/singleProject/resources/singleResource/editResource/editResourceTpl.html'
   });
 }
 

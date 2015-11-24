@@ -1,20 +1,19 @@
 angular.module('app.controllers').controller('TasksCtrl', [
-  '$rootScope', '$scope', '$location', '$stateParams', 'SingleProjectService', 'TasksService','SingleTaskService',
-function($rootScope, $scope, $location, $stateParams, SingleProjectService, TasksService, SingleTaskService) {
+  '$rootScope', '$scope', '$location', '$stateParams', 'SingleProjectService', 'TasksService','SingleTaskService', 'ProjectsService',
+function($rootScope, $scope, $location, $stateParams, SingleProjectService, TasksService, SingleTaskService, ProjectsService) {
   $scope.shouldShowReorder = false;
   $scope.shouldShowDelete = false;
-
   function getTasks(){
     TasksService.getTasks($stateParams.projectId).then(function(success){
       TasksService.tasks = success;
     });
   }
   SingleProjectService.getProject($stateParams.projectId).then(function(success){
-    TasksService.project = success;
+    SingleProjectService.project = success;
   });
   $scope.deleteTask = function(projectId, taskId, index){
     SingleTaskService.deleteTask(projectId,taskId).then(function(success){
-      TasksService.tasks.splice(index,1);
+      SingleProjectService.project.tasks.splice(index,1);
       console.log("index supprimé: "+index);
     });
   };
@@ -29,9 +28,9 @@ function($rootScope, $scope, $location, $stateParams, SingleProjectService, Task
           $scope.tasks = TasksService.tasks;
       }
   });
-  $scope.$watch(function () { return TasksService.project }, function (newVal, oldVal) {
+  $scope.$watch(function () { return SingleProjectService.project }, function (newVal, oldVal) {
       if (typeof newVal !== 'undefined') {
-          $scope.project = TasksService.project;
+          $scope.project = SingleProjectService.project;
       }
   });
 }]);

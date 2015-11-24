@@ -3,9 +3,8 @@ angular.module('app.services').service('SingleProjectService',[
   '$q', '$http','GlobalService', '$ionicLoading',
 function($q, $http, GlobalService, $ionicLoading){
   var singleProjectService = {
-
     index: null,
-
+    project: null,
     getProject: function(id){
       var q = $q.defer();
       $ionicLoading.show({

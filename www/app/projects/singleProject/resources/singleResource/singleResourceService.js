@@ -1,21 +1,21 @@
 'use strict';
-angular.module('app.services').service('SingleTaskService',[
+angular.module('app.services').service('SingleResourceService',[
   '$q', '$http','GlobalService', '$ionicLoading',
 function($q,$http,GlobalService, $ionicLoading){
-  var singleTaskService = {
+  var singleResourceService = {
      index: null,
-     task: null,
-    getTask: function(projectId, id){
+     resource: null,
+    getResource: function(projectId, id){
       var q = $q.defer();
       $ionicLoading.show({
         template: 'loading...'
       });
       $http({
         method: 'GET',
-        url: GlobalService.baseUrl +  '/project/'+projectId+'/task/'+id
+        url: GlobalService.baseUrl +  '/project/'+projectId+'/resource/'+id
       }).then(function successCallback(response){
         q.resolve(response.data);
-        console.log("my task: ",response);
+        console.log("my resource: ",response);
         $ionicLoading.hide();
       },function errorCallback(response){
         q.reject(response);
@@ -24,14 +24,14 @@ function($q,$http,GlobalService, $ionicLoading){
       return q.promise;
     },
 
-    deleteTask: function(projectId, id){
+    deleteResource: function(projectId, id){
       var q = $q.defer();
       $ionicLoading.show({
         template: 'loading...'
       });
       $http({
         method: 'DELETE',
-        url: GlobalService.baseUrl + '/project/'+projectId+'/task/'+id
+        url: GlobalService.baseUrl + '/project/'+projectId+'/resource/'+id
       }).then(function successCallback(response){
         q.resolve(response);
         $ionicLoading.hide();
@@ -44,6 +44,6 @@ function($q,$http,GlobalService, $ionicLoading){
 
 
   };
-  return singleTaskService;
+  return singleResourceService;
 
 }]);

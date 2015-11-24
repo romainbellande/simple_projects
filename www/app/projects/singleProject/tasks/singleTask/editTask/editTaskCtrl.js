@@ -1,6 +1,6 @@
 angular.module('app.controllers').controller('EditTaskCtrl', [
-    '$rootScope', '$scope', '$location', '$stateParams', 'SingleTaskService', '$ionicPopover', 'EditTaskService', 'TasksService', 'GlobalService',
-    function($rootScope, $scope, $location, $stateParams, SingleTaskService, $ionicPopover, EditTaskService, TasksService, GlobalService) {
+    '$rootScope', '$scope', '$location', '$stateParams', 'SingleTaskService', '$ionicPopover', 'EditTaskService', 'TasksService', 'GlobalService', 'ProjectsService', 'SingleProjectService',
+    function($rootScope, $scope, $location, $stateParams, SingleTaskService, $ionicPopover, EditTaskService, TasksService, GlobalService, ProjectsService, SingleProjectService) {
 
 
 
@@ -16,9 +16,9 @@ angular.module('app.controllers').controller('EditTaskCtrl', [
                 console.log(error);
             });
         };
-        $scope.$watch(function () { return TasksService.project }, function (newVal, oldVal) {
+        $scope.$watch(function () { return SingleProjectService.project }, function (newVal, oldVal) {
             if (typeof newVal !== 'undefined') {
-                $scope.project = TasksService.project;
+                $scope.project = SingleProjectService.project;
             }
         });
         $scope.$watch(function () { return TasksService.tasks[SingleTaskService.index] }, function (newVal, oldVal) {
