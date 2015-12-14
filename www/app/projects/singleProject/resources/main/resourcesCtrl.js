@@ -23,6 +23,7 @@ function($rootScope, $scope, $location, $stateParams, SingleProjectService, Reso
     ResourcesService.resources.splice(toIndex, 0, item);
   };
   getResources();
+  
   $scope.$watch(function () { return ResourcesService.resources }, function (newVal, oldVal) {
       if (typeof newVal !== 'undefined') {
           $scope.resources = ResourcesService.resources;

@@ -9117,3 +9117,6 @@ a.button {
 
 .scroll {
   height: 100%; }
+
+textarea {
+  width: 100%; }

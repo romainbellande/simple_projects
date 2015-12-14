@@ -14,7 +14,8 @@ function($q,$http,GlobalService, $ionicLoading){
         url: GlobalService.baseUrl + '/project/'+projectId+'/task/',
         params: {
           task_name: task.name,
-          task_description: task.description
+          task_description: task.description,
+          task_resources: task.resources
         }
       }).then(function successCallback(response){
         q.resolve(response.data);

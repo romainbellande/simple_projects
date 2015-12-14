@@ -6,3 +6,5 @@
 /plugins/
 /www/lib/
 /www/config/config.yml
+.idea
+.DS_Store

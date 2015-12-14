@@ -9,9 +9,7 @@ angular.module('app.controllers').controller('SingleTaskCtrl', [
             SingleProjectService.project = success;
         });
 
-        SingleTaskService.getTask($stateParams.projectId, $stateParams.taskId).then(function(success){
-            SingleTaskService.task = success;
-        });
+        
 
         $scope.$watch(function () { return SingleTaskService.task }, function (newVal, oldVal) {
             if (typeof newVal !== 'undefined') {

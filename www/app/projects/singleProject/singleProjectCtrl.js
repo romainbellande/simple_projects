@@ -1,6 +1,6 @@
 angular.module('app.controllers').controller('SingleProjectCtrl', [
-    '$rootScope', '$scope', '$location', '$stateParams', 'SingleProjectService', '$ionicPopover', 'ProjectsService',
-    function($rootScope, $scope, $location, $stateParams, SingleProjectService, $ionicPopover,ProjectsService) {
+    '$rootScope', '$scope', '$location', '$stateParams', 'SingleProjectService', '$ionicPopover', 'ProjectsService', 'ResourcesService', 'TasksService',
+    function($rootScope, $scope, $location, $stateParams, SingleProjectService, $ionicPopover,ProjectsService, ResourcesService, TasksService) {
         if($stateParams.projectIndex != -1){
             SingleProjectService.index = $stateParams.projectIndex;
         }
@@ -20,7 +20,14 @@ angular.module('app.controllers').controller('SingleProjectCtrl', [
                 ProjectsService.projects[SingleProjectService.index] = SingleProjectService.project;
             }
         });
-    
+        // Get resources
+        ResourcesService.getResources($stateParams.projectId).then(function(success){
+          ResourcesService.resources = success;
+        });
+
+        TasksService.getTasks($stateParams.projectId).then(function(success){
+            TasksService.tasks = success;
+        });
 
 
 
